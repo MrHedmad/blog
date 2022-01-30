@@ -27,10 +27,10 @@ paginate = 5
 
 [languages]
   [languages.en]
-    title = "Hello Friend"
-    subtitle = "A simple theme for Hugo"
+    title = "Hedmad's Blog"
+    subtitle = "A place of code and pain"
     keywords = ""
-    copyright = ""
+    copyright = "© Luca Visentin - 2022"
     menuMore = "Show more"
     writtenBy = "Written by"
     readMore = "Read more"
@@ -41,11 +41,11 @@ paginate = 5
     dateFormatSingle = "2006-01-02"
     dateFormatList = "2006-01-02"
     # leave empty to disable, enter display text to enable
-    #lastModDisplay = "Last edit on"
+    lastModDisplay = "Last edit on"
 
     [languages.en.params.logo]
-      logoText = "hello friend"
-      logoHomeLink = "/"
+      logoText = "hedmad@blog"
+      logoHomeLink = "https://mrhedmad.github.io/blog/"
     # or
     #
     # path = "/img/your-example-logo.svg"
@@ -57,6 +57,6 @@ paginate = 5
         name = "About"
         url = "/about"
       [[languages.en.menu.main]]
-        identifier = "showcase"
-        name = "Showcase"
-        url = "/showcase"
+        identifier = "Archive"
+        name = "Archive"
+        url = "/archive"
