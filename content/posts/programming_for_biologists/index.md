@@ -1,8 +1,8 @@
 +++
 title = "Introduction to Programming, for biologists"
-draft = false
+draft = true
 +++
 
-This post is aimed at people that are
 ## The command line
+
 
