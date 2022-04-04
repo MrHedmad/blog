@@ -86,7 +86,7 @@ swapon /dev/sda2
 reflector --latest 100 --country 'Italy,Germany,' --sort rate --save /etc/pacman.d/mirrorlist
 
 # Pacstrap basic stuff:
-pacstrap /mnt base linux-zen linux-firmware base-devel \
+pacstrap /mnt base linux-zen linux-zen-headers linux-firmware base-devel \
   sudo man-db man-pages texinfo intel-ucode \
   iwc neovim python chezmoi curl
 
@@ -226,9 +226,14 @@ rm -rf yay
 
 ## Xorg
 Xorg is the most used display server. It is what renders the windows you see.
-Install the `xorg` package and the graphics card drivers.
+Install the `xorg` package and the graphics card drivers. I use the proprietary
+drivers as the open-source ones did not play nice with PRIME rendering (for some
+reason I don't really get):
 ```zsh
-sudo pacman -S xorg mesa
+# As we are using the zen kernel, the nvidia drivers need to be recompiled
+# at every update. This is done automatically with `dkms`. To run a progam with
+# accelleration, run `prime-run <executable>`.
+sudo pacman -S xorg nvidia-dkms nvidia-prime
 ```
 We need a wait to start X. We could use a display manager, but this is arch,
 so it's bloat. We install `xinit` to start X:
@@ -342,7 +347,23 @@ tore through immediately when the PC is not plugged in:
 
 ```
 
-:: WORK IN PROGRESS ::
+## Microphone
+To enable the microphone, the specific module for Alsa has to be loaded manually.
+This should work out-of-the-box, but it does not. It's an easy tweak though.
+Edit `/etc/pulse/default.pa` and add the following line **after** the line
+`.ifexists module-udev-detect.so`:
+```zsh
+load-module module-alsa-source device=hw:0,0
+```
+Test the mic with `pavucontrol` (`sudo pacman -S pavucontrol`) or with this snippet (needs `alsa-utils`):
+```zsh
+test-microphone() {
+    arecord -vvv -f dat /dev/null
+}
+# Used with `test-microphone`. Shows the levels detected by the mic
+```
+
+:: ***WORK IN PROGRESS*** ::
 
 # Extras
 ## Add some wallpaper (optional)
@@ -353,6 +374,13 @@ Install `archlinux-wallpaper`, then choose a wallpaper by right clicking > Deskt
 sudo pacman -S archlinux-wallpaper
 ```
 I use `wave`.
+
+## Audio management
+You probably need these at some point:
+```zsh
+sudo pacman -S alsa-utils pavucontrol
+```
+They are used to manage the low-level microphone and playback drivers/devices.
 
 ## Other programs
 There are many other programs which are useful to me.
@@ -373,7 +401,7 @@ As a bioinformatician, I also need these:
 set -k
 sudo pacman -S \
   r gcc-fortran \ # gcc-fortran is needed to compile most packages
-  python \
+  python python-pip python-venv \
   rustup \ # Run the extra steps below
   docker \ # Run the extra steps below
   texlive-most \ # For latex, and R too (knitting). You can select just a subset of the whole package.
