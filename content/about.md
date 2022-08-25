@@ -72,7 +72,7 @@ If any links are dead, please send me an email or open a pull request on github.
 This website is static, generated with [HUGO](https://gohugo.io/), and the theme
 [hello, friend!](https://github.com/panr/hugo-theme-hello-friend) by Panr.
 Its source is hosted on [GitHub](https://github.com/MrHedmad/blog) and the
-generated content is hosted on GitHub Pages. The live site builds itself on
+generated content is hosted on GitHub Pages (from the same repository, look at the `gh_pages` branch). The live site builds itself on
 every push with a [GitHub Action](https://github.com/MrHedmad/blog/actions).
 
 If you are curious to make your own website hosted on GitHub pages,
