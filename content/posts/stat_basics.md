@@ -6,23 +6,23 @@ draft = true
 toc = true
 +++
 
-In this post I am to give the reader some basic concepts of statistics that can be useful in everyday lab work. I also aim to clear up some misunderstandings that may come up from time to time when doing statistics work.
+In this post I am aiming to give the reader some basic statistics concepts that can be useful in everyday lab work. I also aim to clear up some misunderstandings that may come up from time to time when doing statistics work.
 
 As with all of my posts, this is mainly written with regards to biologists, but the concepts are generally applicable, although the examples shown might not.
 
 To write this post, I'm mainly referencing "The Art of Statistics", by David Spiegelhalter (Pelican, 2019, ISBN: 978-0-241-39863-0). I also follow his ingenious ask-a-question pattern for starting chapters.
 For more in-depth coverage of statistical modelling, I reference "An Introduction to Statistical Learning", by G. James, D. Witten, T. Hastie and R. Tibshirani (Springer Texts, 2013, ISBN> 978-1-4614-7137-0). I also heavily use online resources for the most common concepts. I'll leave links scattered around when they are relevant.
 
-I make heavy use of footnotes. I'm sorry about that. I use footnotes to give more in-depth explanations that would burden the discussion too much. You can click on them to read them - they feature a handy "go back" arrow so you can get back in the main text quickly.
+I make heavy use of footnotes. I'm sorry about that. I use them to give more in-depth explanations that would burden the discussion too much. You can click on them to read them - they feature a handy "go back" arrow so you can get back in the main text quickly.
 
 ## Asking questions
 
 Fundamentally, statistics is about answering big questions with little information. A few examples:
-- **Determine some measurement**, such as the average height of people living in a large city;
-- Test if something **has an effect**, for example a drug in a drug trial;
-- **Model** some phenomenon, such as how murders grow with gun sales;
+- **Determine some measurement**, such as the expression of a protein in a cell type;
+- Test if something **has an effect**, for example a drug in a drug trial, or similarly find **differences** between two conditions[^drug_trial];
+- **Model** some phenomenon, such as how absorbance is related to concentration;
 - **Predict** something, such as tomorrow's stock market.
-- Divide a number of things into **clusters**, such as dividing up people into groups that will vote the same political party.
+- Divide a number of things into **clusters**, such as dividing up tumors based on their gene expression signatures.
 
 The question asked is of fundamental importance. From the question, we determine the best course of action to take to answer it. The question has an impact on the collection of the data, on the statistical method used to analyze it, and on the validity of our conclusions. It is therefore vital to ask the correct questions.
 
@@ -30,9 +30,9 @@ The question asked is of fundamental importance. From the question, we determine
 
 > How tall are people?
 
-Such a question might be posed by some clothing company to tailor better clothes. It seems easy to answer: We could take a measure tape, and start walking around in the city, asking people to be measured. Once we gather enough data, say $ 100 $ measurements, we stop and call it a day.
+Such a question might be posed by some clothing company to tailor better clothes. It seems easy to answer: We could take a measure tape, and start walking around the city, asking people to be measured. Once we gather enough data, say $ 100 $ measurements, we stop and call it a day.
 
-However, when we think about it, the question asked has some fundamental problems. First of all, we have to define what we mean by "tallness". It is probable that we mean the *average* height. But we might also be interested to determine what the most extreme heights are (i.e. the tallest and shortest persons), or the most *common* height. These are just some of the ways we can describe the shape of the **distribution** of our values. Formally:
+When we think about it, however, the question asked has some fundamental problems. First of all, we have to define what we mean by "tallness". It is probable that we mean the *average* height. But we might also be interested to determine what the most extreme heights are (i.e. the tallest and shortest persons), or the most *common* height. These are just some of the ways we can describe the shape of the **distribution** of our values. Formally:
 - The **mean** or average height is $ \mu = \frac{1}{N}\sum{X}$, where $N$ is the number of people and $\sum{X}$ is the sum of all their heights;
 - The most frequent height is the **mode** height[^mode_note];
 - The **maximum** or **minimum** heights;
@@ -40,7 +40,7 @@ However, when we think about it, the question asked has some fundamental problem
 To get the *true* average height of all the people that live in Turin, we could *actually* measure every person living in Turin as of today, and then take the average. We would obtain the **population average**, $ \mu $. However, taking a measurement of all $ \approx 860'000$ people[^turin_pop] living in Turin might be hard. It is intuitive (and correct) to think that the average height of a *subset* of our population would estimate well the average height of the overall population.
 Formally, we call the subset of the population that we measure to get our data the **sample**. We also say that the **sample average**, $ \bar{\mu} $, is the **best estimator** for the population average $ \mu $. We also refer to all estimations derived from the population as **parameters**, and all estimations derived from samples as **statistics**[^stat_vs_param]. 
 
-You can read more about the best estimations of parameters from statistics in [this wikipedia article](https://en.wikipedia.org/wiki/Estimator)[\wikipedia_is_good]. Be careful however that it goes deeper than what we have discussed here.
+You can read more about the best estimations of parameters from statistics in [this wikipedia article](https://en.wikipedia.org/wiki/Estimator)[^wikipedia_is_good]. Be careful however that it goes deeper than what we have discussed here.
 
 We can refine our question:
 
@@ -99,5 +99,6 @@ As we said, how we sample the population is vitally important. And when somethin
 
 [^stat_vs_param]: To be clearer: $ \mu $ is a parameter, while $ \bar{\mu} $ is a statistic.
 [^turin_pop]: Source - ISTAT, census of 2020.
-[^mode_note]: Which, coincidentally, might be close to the mean, but this is not always the case.
-[\wikipedia_is_good]: Coincidentally, wikipedia is really good at dealing with statistics topics. So don't be afraid to consult it for additional information. This is both my and several of my statistics professors' opinion.
+[^mode_note]: The average and mode are most often the same, but not always. For example, there are some "bimodal" (two-modes) datasets, where values for a measurement are clustered near two far-away values. In this case, the mode (which will be in one of the two clusters of values) is different from the mean (which is between the two clusters). 
+[^wikipedia_is_good]: Coincidentally, wikipedia is really good at dealing with statistics topics. So don't be afraid to consult it for additional information. This is both my and several of my statistics professors' opinion.
+[^drug_trial]: In the case of a drug trial, we want to test if there is some difference between two conditions. For example, a group of people with high blood pressure is split in two: half get a treatment that should lower blood pressure, and the other half does not. Then, we would wish to test if the two groups have different blood pressure. In other words, if the drug had an effect on blood pressure. You might be wonder why we need statistics to do this: just measure the blood pressures, and see if the values differ. What statistics can do is tell us whether the differences we see are due to a real effect of the drug, or due to a random fluctuation in blood pressures we would normally expect. This is what we mean when we say that two things are "significantly different".
