@@ -131,7 +131,8 @@ Enable the services:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2
 and enable <code>systemd-timesyncd.service</code> if not enabled yet.</p><h1 id=post-installation>Post installation
 <a href=#post-installation class=h-anchor aria-hidden=true>#</a></h1><p>Now the live environment boots and has internet access, but it is not really
 useful as-is.</p><h2 id=make-a-new-user>Make a new user
-<a href=#make-a-new-user class=h-anchor aria-hidden=true>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>useradd -m -G wheel docker -s /bin/zsh hedmad
+<a href=#make-a-new-user class=h-anchor aria-hidden=true>#</a></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>groupadd docker
+</span></span><span style=display:flex><span>useradd -m -G wheel,docker -s /bin/zsh hedmad
 </span></span><span style=display:flex><span>passwd hedmad
 </span></span></code></pre></div><p>Edit <code>/etc/sudoers</code> and uncomment the lines giving the <code>wheel</code> group access to
 <code>sudo</code>. This should be done with <code>visudo</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>export EDITOR<span style=color:#f92672>=</span>/usr/bin/nvim
