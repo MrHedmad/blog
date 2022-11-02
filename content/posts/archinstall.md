@@ -202,7 +202,8 @@ useful as-is.
 
 ## Make a new user
 ```bash
-useradd -m -G wheel docker -s /bin/zsh hedmad
+groupadd docker
+useradd -m -G wheel,docker -s /bin/zsh hedmad
 passwd hedmad
 ```
 Edit `/etc/sudoers` and uncomment the lines giving the `wheel` group access to

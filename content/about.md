@@ -2,21 +2,24 @@
 title = "About"
 +++
 
+{{< image src="/blog/resources/images/profile.png" alt="My Dumb Face" position="right" style="border-radius: 8px; width: 200px; float: right; border:10px solid transparent;" >}}
+
 Hello, my name is Luca and this is my blog, where I post about the things that
 interest me.
 
 I have a Master's degree in Cellular and Molecular Biology, and I specialize in
 Bioinformatics. I live in Turin, Italy.
-I'm about to start a PHD position at Prof. Munaron Lab, under the supervision of Dr. Ruffinatti at the University of Turin. The goal of my PhD is to profile
-the gene expression in tumor cells to detect deregulations at a whole-transportome level.
+I'm currently working as a PHD candidate at Prof. Munaron Lab, under the supervision of Dr. Ruffinatti at the University of Turin.
+The goal of my PhD is to profile the gene expression in tumor cells to detect deregulations at a whole-transportome level.
 
 I mostly code in `R` and `Python`, although I've recently taken a liking for the
 `Rust` programming language.
 
-Contact me with my email: `luca.visentin@unito.it`
+Contact me with my email: `luca.visentin (at) unito.it`
 
-In my spare time I'm a PC gamer, and I play a ton of board games and (occasionally)
-Dungeons and Dragons.
+In my spare time I'm a PC gamer, and I play a ton of board games and (occasionally) Dungeons and Dragons.
+
+You can find [my linktree here](https://linktr.ee/mrhedmad). This website also hosts my curriculum vitae [in italian](/blog/resources/assets/Luca_Visentin_CV_ITA.pdf) and [in English](/blog/resources/assets/Luca_Visentin_CV_ENG.pdf), as well as [my publication list](/blog/resources/assets/Luca_Visentin_Publication_List.pdf).
 
 ## My tools
 
@@ -29,12 +32,10 @@ Some of my favourite day-to-day tools include:
   and the official and unofficial repositories. Being a rolling release is also
   a must for me. I think my old Ubuntu systems broke at every release update.
 
-  For my work PC I use Manjaro, as the NUC has more than one user.
-
 - [VsCode](https://code.visualstudio.com/)
 
-  As my source code editor, I choose NeoVim with [NeoVim](https://neovim.io/)
-  as the backup alternative. It's just a good, simple to use editor. NeoVim is there when simple editing needs to be done, or I can't (or don't want to) leave the command line.
+  As my editor, I use VSCode with the Vim extension, so I can use the powerful VIM stuff in VScode.
+  To edit things in the terminal I use NeoVim.
 
 - [RStudio](https://www.rstudio.com/)
 
@@ -61,7 +62,6 @@ Some of my favourite day-to-day tools include:
 
   I have access to an intel NUC at the lab, and my PC at home, so the ipad is what gets carried back and forth from home to the lab, daily. Its capabilities to markup text and take notes are unsurpassed, and is a hub for all of my documents and things to read.
 
-  Time will tell if it turns out to be essential or just a pretty (expensive) toy. I think (hope) that the former is true.
 
 ## About this blog
 I try to post about things that I like, or concepts that are not well explained
