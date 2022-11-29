@@ -1,5 +1,5 @@
 +++
-title = "Stats 4 Dummies"
+title = "Stat Basics"
 date = "2022-07-27"
 description = "A gentle introduction to statistics, that gives you the tools to understand more about it. Also contains some useful reference books to keep in the shelf when you go about running t-tests and the like."
 draft = true
@@ -38,8 +38,8 @@ When we think about it, however, the question asked has some fundamental problem
 - Sorting the values from smallest to highest, the value in the middle (or the average of the two middle values, in the case of an even number of values) is the **median** value[^median_value].
 - The **maximum** or **minimum** heights mark the distribution's **range**;
 
-To get the *true* average height of all the people that live in Turin, we could *actually* measure every person living in Turin as of today, and then take the average. We would obtain the **population average**, $ \mu $. However, taking a measurement of all $ \approx 860'000$ people[^turin_pop] living in Turin might be hard. It is intuitive (and correct) to think that the average height of a *subset* of our population would estimate well the average height of the overall population.
-Formally, we call the subset of the population that we measure to get our data the **sample**. We also say that the **sample average**, $ \bar{\mu} $, is the **best estimator** for the population average $ \mu $. We also refer to all estimations derived from the population as **parameters**, and all estimations derived from samples as **statistics**[^stat_vs_param]. 
+To get the *true* average height of all the people that live in Turin, we could *actually* measure every person living in Turin as of today, and then take the average. We would obtain the **population average**, $ \mu $. However, taking measurements of all $ \approx 860'000$ people[^turin_pop] living in Turin might be hard. It is intuitive (and correct) to think that the average height of a *subset* of our population could estimate well the average height of the overall population.
+Formally, we call the subset of the population that we measure to get our data the **sample**[^sample_vs_sampled_item]. We also say that the **sample average**, $ \bar{\mu} $, is the **best estimator** for the population average $ \mu $. We also refer to all true values of the population as **parameters**, and all estimations derived from samples as **statistics**[^stat_vs_param]. 
 
 You can read more about the best estimations of parameters from statistics in [this wikipedia article](https://en.wikipedia.org/wiki/Estimator)[^wikipedia_is_good]. Be careful however that it goes deeper than what we have discussed here.
 
@@ -56,7 +56,7 @@ Our final, good question might be:
 
 ### Sampling - best practices
 
-Assume we are lazy, and it's a hot day out due to climate change, so we only measure 10 people from our department (assuming it has air conditioning).
+Assume we are lazy, and it's an extremely hot day out due to climate change, so we only measure 10 people from our department (assuming it has air conditioning).
 We would then think that $ \bar{\mu} \approx \mu$, but this would not really be the case. As you'd think, with this sample $ \bar{\mu} $ might very well differ from $ \mu $: we could be overestimating or underestimating it.
 
 Intuitively, to get a good estimates from our sample regarding the population (such as $ \mu $ from $ \bar{\mu} $), we need two things:
@@ -69,15 +69,16 @@ The mathematical best way to address point 2 is to choose from the population **
 
 The first point is harder to address properly. Sometimes, it is easy to choose a large $ n $. In theory, the larger $ n $ is the better. This is intuitive: the more independent people[^not_people] we sample, the better estimate we would make. However, most often having a large $ n $ is not practically possible. We might run into issues such as cost, or the invasiveness of the procedure. It turns out that there *is* a mathematical way to determine the optimal sample size to use. However, it requires to know a few more concepts, so I'll pick it up later. 
 
-There are many sampling strategies and many opinions on what the best sample size is, given some constraints. In theory, random sampling with the mathematical approach of determining $ n $ that we will see later is the best approach. However, in reality we have practical constraints, so adapting our sampling strategy is often required (or even essential). Sampling strategies are a lengthy topic that would not fit here. To read more, consult, for example, [this paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5029234/). A pubmed (or google) search for "sampling strategies" might also be useful.
+There are many sampling strategies and many opinions on what the best sample size is, given some constraints. In theory, random sampling with the mathematical approach of determining $ n $ that we will see later is the best approach. However, in reality we have practical constraints, so adapting our sampling strategy is often required (or even essential). Sampling strategies are a lengthy topic that would not fit here. To read more, consult, for example, [this paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5029234/). A PubMed (or google) search for "sampling strategies" might also be useful.
 
 ### Sampling - worst pitfalls
 
-As we said, how we sample the population is vitally important. And when something is vitally important, you know that it is easy to mess up. I mention two bad ideas you might have while sampling:
+As we said, how we sample the population is vitally important. And when something is vitally important, you know that it is easy to mess up. The most common of such mistakes, and the easiest to miss, is **pseudoreplication**.
 
-We call **"convenience" sampling** when the samples are made from the easiest-to-obtain items. For instance, we might measure only people who are near us (like in the previous example where we sampled only people in our air-conditioned department) or are cheapest to find and/or measure (like psychology students for behavioral tests). As we've already said, this is usually a bad idea.
+Pseudoreplication occurs when we consider as true, independent measurements (i.e. the height measurements of our previous example)[^biological_replicates] measures that instead are not (completely) related to what we actually want to measure, or are not independent from one another.
 
-**Pseudoreplication** occurs when we consider as true, "biological" measurements (i.e. the height measurements of our previous example) measures that instead are not related to what we actually want to measure, or are generally related to one another. For instance, we might measure the movement of 100 cells in a migration experiment. However, we monitored 10 different cells from 10 isolated wells. In this case, the 10 cells from the same well are related to one another: they were cultured (and treated) together, and we cannot exclude that they influence each other. So, considering all 100 measurements in our statistical calculation would be an error: not all of the values are independent of one another.
+For instance, we might measure the movement of 100 cells in a migration experiment. However, we monitored 10 different cells from 10 isolated wells. In this case, the 10 cells from the same well are related to one another: they were cultured (and treated) together, and we cannot exclude that they influence each other. So, considering all 100 measurements in our statistical calculation would be an error: not all of the values are independent of one another.
+The correct way to handle this is to consider the *wells* as our entity of interest: by averaging the measurements of the 10 cells in each well, and using the resulting 10 values (one per well) in our analysis, we would have truly independent samples[^what_is_unrelated].
 
 The topic of pseudoreplication is so vast that it would not fit here. In recent times, it has been found that most studies in the biologic and medical fields are plagued by pseudoreplicated measures, and thus their conclusions are not robust or have to be rejected outright. Please refer to [this paper](https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.2005282) for a solid discussion of the topic.
 
@@ -109,3 +110,9 @@ It is often the case that **the wrong biological entity is sampled** based on ou
 [^median_value]: For example, the median of the values [$ 15 $, $ 22 $, $ 39 $, $ 40 $] is $ (22 + 39) / 2 = 30.5$. For reference, the mean is $ 29 $ instead.
 [^not_people]: Or mice, or cells, or culture wells, or whatever it is we are interested about.
 [^cell_lines_vs_real]: We are running on the assumption that cell lines react and behave like real cancer samples from real patients (i.e. "primary" cell lines). This might not be the case, but much medical research is built on this assumption.
+[^biological_replicates]: In the biological setting, these kinds of items are referred to "biological replicates", while repeated measurements of the same 'biological sample' are "technical replicates". Considering technical replicates 
+[^sample_vs_sampled_item]: Confusingly, it is often the case tha the word "sample" means both the collection of items measured for a certain study, and the single items themselves (e.g. "My experiment consists in 12 samples"). The more correct term would be 'measurement'. 
+[^what_is_unrelated]: The attentive reader might catch that the example I provided is flawed: The cells in the 10 wells are probably derived from the same cell line. They were also probably treated in parallel, and cultured together in the same space. Can we truly say that they are unrelated?
+By extension, different people living in the same area (Turin) might influence each other (causing an effect in their height).
+It turns out that there is a way to define "independence". See [this wikipedia article](https://en.wikipedia.org/wiki/Independence_(probability_theory)). In layman's terms, if knowing the realization of one of the variables does not affect the probability distribution of another variable (e.g. between the two wells), the variables are said to be independent.
+It's harder to determine, however, true independence d
