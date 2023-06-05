@@ -89,7 +89,7 @@ reflector --latest 100 --country 'Italy,Germany,' --sort rate --save /etc/pacman
 # Pacstrap basic stuff:
 pacstrap /mnt base linux-zen linux-zen-headers linux-firmware base-devel \
   sudo man-db man-pages texinfo intel-ucode \
-  iwc neovim python chezmoi curl
+  iwd neovim python git curl
 
 # Generate an fstab file:
 # This allows the kernel to know what to mount at boot, and do it automatically.
@@ -116,6 +116,14 @@ echo "neutrino" > /etc/hotname
 passwd
 ```
 
+If pac-strapping does not work due to keyring stuff, try:
+```bash
+pacman-keys --init
+pacman-keys --populate
+pacman -Syu achlinux-keyring
+# Possibly follow with another pacman-keys --populate
+```
+
 ### Setup the bootloader
 I use the simplest of the simple bootloaders, `systemd-boot`.
 It is already in the installation, as it is part of `systemd`. Install it to the boot
@@ -139,7 +147,7 @@ Add the two main loaders for arch linux, the canonical one (`arch.conf`) and the
 title  Arch Linux
 linux  /vmlinuz-linux-zen
 initrd /intel-ucode.img
-initrd /initramfs-linux.img
+initrd /initramfs-linux-zen.img
 options root=/dev/sda3
 ```
 Then `cp /boot/loader/entries/arch.conf /boot/loader/entries/arch-fallback.conf`, and
@@ -148,7 +156,7 @@ edit the copy (`/boot/loader/entries/arch-fallback.conf`):
 title  Arch Linux
 linux  /vmlinuz-linux-zen
 initrd /intel-ucode.img
-initrd /initramfs-linux-fallback.img   <<< This is the only line that changed
+initrd /initramfs-linux-zen-fallback.img   <<< This is the only line that changed
 options root=/dev/sda3
 ```
 
@@ -262,24 +270,12 @@ Pull in the config files with `chezmoi`, so we can use them when needed:
 chezmoi init https://github.com/MrHedmad/dotfiles.git
 ```
 
-## A window manager
-We add a window manager. I choose `openbox`. To access the terminal from the
-openbox session we will also need alacritty (and its fonts):
-```zsh
-sudo pacman -S openbox picom ttf-dejavu ttf-liberation alacritty obconf polybar
-yay -S nerd-fonts-fira-code
-chezmoi apply .xinitrc
-chezmoi apply .alacritty.yml
-chezmoi apply .config/openbox/menu.yml # A very tiny menu, before rofi
-chezmoi apply .config/openbox/rc.xml
-chezmoi apply .config/openbox/autostart
-chezmoi apply .config/picom/picom.conf
-chezmoi apply .config/polybar/config.ini
-# Edit the openbox theme by running "obconf".
-# My theme is `Arc-Clone`.
+## A desktop
+The terminal is cool and all, but we would like a desktop. I choose `plasma`, from KDE. I also add `NetworkManager` to better handle GUI network manager. It also works with `iwd` after some configuration (refer to the wiki).
+
+```bash
+sudo pacman -Syu plasma networkmanager kde-applications
 ```
-Start openbox after logging in with `startx`.
-I assume that all commands here are executed in the alacritty app.
 
 ## Get a web browser
 To look at this guide more cleanly (and get off your phone), install a web
@@ -287,8 +283,7 @@ browser. I choose firefox:
 ```zsh
 sudo pacman -S firefox
 ```
-Start it with `firefox > /dev/null 2>&1 &` (for now). Connect to firefox sync
-and it'll pull down all addons automatically. I use a theme [found here][ffox theme].
+I use a theme [found here][ffox theme].
 
 [ffox theme]: https://addons.mozilla.org/en-US/firefox/addon/nicothin-dark-theme/
 
@@ -299,54 +294,9 @@ to give it some zest.
 # Follow the guide on their github.
 # Keep in mind that pulling a script from github and passing it to `sh` from
 # curl is a major security risk. Pull it first, then run it.
+# Reccomended: install fira code nerd font
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
-# Pull in configurations
-chezmoi apply .zshrc
-chezmoi apply .p10k.zsh
-```
-You will probably get errors in `.zshrc` due to missing programs. We'll fix it later.
-
-## Add rofi
-We need a better way to launch GUI programs. I use rofi, which is dmenu but better:
-```zsh
-sudo pacman -S rofi papirus-icon-theme
-```
-I use the theme configs from `adi1090x/rofi`:
-```zsh
-# This is the installation steps from the readme
-git clone --depth=1 https://github.com/adi1090x/rofi.git
-cd rofi
-chsh +x setup.sh
-./setup.sh
-cd ..
-rm -r rofi
-# Set my custom theme (Just some colour changes)
-chezmoi apply .config/rofi/launchers/text/styles/black.rasi
-chezmoi apply .config/rofi/launchers/text/styles/colors.rasi
-chezmoi apply .config/rofi/launchers/text/launcher.sh
-```
-I `Super+t` mapped to running rofi in `.config/openbox/rc.xml`.
-
-## Install a file manager
-I choose PCmanFM.
-```zsh
-sudo pacman -S pcmanfm-gtk3 lxappereance-gtk3 ttf-roboto
-```
-Set the icon theme by running `lxappereance` (I set the
-[Nordic theme][nordic gtk3 theme], download the zip file and unzip it in
-`~/.themes` or better `/usr/share/themes`, with the `Roboto` font, size 11).
-The theme applies to all gtk3 programs, like firefox, for example.
-PCmanFM also handles the wallpaper and the files on the desktop.
-It is started by `/home/hedmad/.config/openbox/autostart`.
-
-[nordic gtk3 theme]: https://www.gnome-look.org/p/1267246
-
-## Power management
-As this is a laptop, we want to do some power management, or the battery gets
-tore through immediately when the PC is not plugged in:
-```zsh
-
 ```
 
 ## Microphone
