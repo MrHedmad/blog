@@ -19,7 +19,9 @@ Contact me with my email: `luca.visentin (at) unito.it`
 
 In my spare time I'm a PC gamer, and I play a ton of board games and (occasionally) Dungeons and Dragons.
 
-You can find [my linktree here](https://linktr.ee/mrhedmad). This website also hosts my curriculum vitae [in italian](/blog/resources/assets/Luca_Visentin_CV_ITA.pdf) and [in English](/blog/resources/assets/Luca_Visentin_CV_ENG.pdf), as well as [my publication list](/blog/resources/assets/Luca_Visentin_Publication_List.pdf).
+You can find [my linktree here](https://linktr.ee/mrhedmad).
+This website also hosts my curriculum vitae [in italian](/blog/resources/assets/Luca_Visentin_CV_ITA.pdf) and [in English](/blog/resources/assets/Luca_Visentin_CV_ENG.pdf).
+You can find my OrcID [here](https://orcid.org/0000-0003-2568-5694).
 
 ## My tools
 
@@ -32,10 +34,10 @@ Some of my favourite day-to-day tools include:
   and the official and unofficial repositories. Being a rolling release is also
   a must for me. I think my old Ubuntu systems broke at every release update.
 
-- [VsCode](https://code.visualstudio.com/)
+- [NeoVim](https://neovim.io/)
 
-  As my editor, I use VSCode with the Vim extension, so I can use the powerful VIM stuff in VScode.
-  To edit things in the terminal I use NeoVim.
+  I've been using NeoVim for a long time now, and I think I won't ever go back.
+  It excels at both speed and convenience.
 
 - [RStudio](https://www.rstudio.com/)
 
