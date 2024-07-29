@@ -1,0 +1,44 @@
+baseURL = "https://mrhedmad.github.io/blog/"
+title = "Open Bytes"
+theme="archie"
+languageCode = "en-us"
+
+copyright = "CC-BY 4.0 - Luca Visentin - 2024"
+
+# Code Highlighting, served by Pygments
+# See https://pygments.org/
+pygmentsstyle = "github-dark" # See https://pygments.org/styles/
+pygmentscodefences = true # Allows to use ```html, for instance
+
+paginate = 5
+
+[params]
+   mode = "dark"
+   useCDN = true
+   subtitle = "I have no idea what this is"
+   mathjax = true
+   katex = true
+   mainSections = ["posts"]
+
+# Social
+
+[[params.social]]
+name = "GitHub"
+icon = "github"
+url = "https://github.com/MrHedmad/"
+
+# Menu bar
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "Posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 3

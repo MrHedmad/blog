@@ -1,5 +1,5 @@
 +++
-title = "On bi-dimensional qualitative LMs for gene expression analysis"
+title = "On two-dimensional qualitative LMs for gene expression analysis"
 date = "2023-02-16"
 description = "Some considerations on the interpretation of 2D linear models when running DEAs"
 draft = false

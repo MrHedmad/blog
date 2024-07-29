@@ -1,7 +1,6 @@
 +++
 title = "Arch Installation"
 description = "All the steps I use to install Arch on my tiny laptop. May be useful to future me or to someone who needs a quick reference guide."
-toc = true
 date = "2022-04-10"
 +++
 
