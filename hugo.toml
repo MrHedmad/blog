@@ -15,7 +15,6 @@ paginate = 5
 [params]
    mode = "dark"
    useCDN = true
-   subtitle = "I have no idea what this is"
    mathjax = true
    katex = true
    mainSections = ["posts"]

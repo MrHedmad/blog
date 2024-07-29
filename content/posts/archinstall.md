@@ -1,6 +1,6 @@
 +++
-title = "Arch Installation"
-description = "All the steps I use to install Arch on my tiny laptop. May be useful to future me or to someone who needs a quick reference guide."
+title = "Arch Linux Installation"
+description = "All the steps I use to install Arch on my laptop. May be useful to future me or to someone who needs a quick reference guide."
 date = "2022-04-10"
 +++
 
