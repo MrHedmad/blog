@@ -16,7 +16,6 @@ paginate = 5
    mode = "dark"
    useCDN = true
    mathjax = true
-   katex = true
    mainSections = ["posts"]
 
 # Social
