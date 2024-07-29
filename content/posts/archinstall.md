@@ -4,7 +4,6 @@ description = "All the steps I use to install Arch on my laptop. May be useful t
 date = "2022-04-10"
 +++
 
-# Installing Arch linux
 These are my short notes on installing Arch on my laptop (an Asus Zenbook 14).
 It has UEFI Boot and a single hard disk of 500Gb. It has an Italian keyboard
 (`it`), a NVIDIA card and an Intel processor.
