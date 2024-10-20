@@ -1,4 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Open Bytes</title><link>https://mrhedmad.github.io/blog/posts/</link><description>Recent content in Posts on Open Bytes</description><generator>Hugo</generator><language>en-us</language><copyright>CC-BY 4.0 - Luca Visentin - 2024</copyright><lastBuildDate>Thu, 16 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://mrhedmad.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>On two-dimensional qualitative LMs for gene expression analysis</title><link>https://mrhedmad.github.io/blog/posts/on_2d_lm_deas/</link><pubDate>Thu, 16 Feb 2023 00:00:00 +0000</pubDate><guid>https://mrhedmad.github.io/blog/posts/on_2d_lm_deas/</guid><description>When dealing with differential gene expression analyses (DEAs), one can often come across a difficulty of interpreting the linear models that are used to detect differentially expressed genes, especially when more than one experimental variable is considered.
-Both the limma and DESeq2 packages are very famous packages for running DEAs. They both use linear models (LMs) - generalized linear models (GLMs) for DESeq2- to model the expression of every gene across all considered conditions, and use the associated p-values and beta coefficients of the resulting models to detect DEGs.</description></item><item><title>Arch Linux Installation</title><link>https://mrhedmad.github.io/blog/posts/archinstall/</link><pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate><guid>https://mrhedmad.github.io/blog/posts/archinstall/</guid><description>These are my short notes on installing Arch on my laptop (an Asus Zenbook 14). It has UEFI Boot and a single hard disk of 500Gb. It has an Italian keyboard (it), a NVIDIA card and an Intel processor.
-Mandatory disclaimer: Do not follow this guide. Follow the real guide over in the Arch wiki.
-Get an installation ISO Download from www.archlinux.org/download/ the latest ISO and ask a friend with windows to use Rufus to make a bootable USB stick with it.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Open Bytes</title><link>https://mrhedmad.github.io/blog/posts/</link><description>Recent content in Posts on Open Bytes</description><generator>Hugo</generator><language>en-us</language><copyright>CC-BY 4.0 - Luca Visentin - 2024</copyright><lastBuildDate>Thu, 16 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://mrhedmad.github.io/blog/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>On two-dimensional qualitative LMs for gene expression analysis</title><link>https://mrhedmad.github.io/blog/posts/on_2d_lm_deas/</link><pubDate>Thu, 16 Feb 2023 00:00:00 +0000</pubDate><guid>https://mrhedmad.github.io/blog/posts/on_2d_lm_deas/</guid><description>&lt;p>When dealing with differential gene expression analyses (DEAs), one can often
+come across a difficulty of interpreting the linear models that are used to
+detect differentially expressed genes, especially when more than one
+experimental variable is considered.&lt;/p>
+&lt;p>Both the &lt;code>limma&lt;/code> and &lt;code>DESeq2&lt;/code> packages are very famous packages for running DEAs. They both
+use linear models (LMs) - generalized linear models (GLMs) for &lt;code>DESeq2&lt;/code>- to
+model the expression of every gene across all considered conditions, and use
+the associated p-values and beta coefficients of the resulting models to detect
+DEGs.&lt;/p></description></item><item><title>Arch Linux Installation</title><link>https://mrhedmad.github.io/blog/posts/archinstall/</link><pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate><guid>https://mrhedmad.github.io/blog/posts/archinstall/</guid><description>&lt;p>These are my short notes on installing Arch on my laptop (an Asus Zenbook 14).
+It has UEFI Boot and a single hard disk of 500Gb. It has an Italian keyboard
+(&lt;code>it&lt;/code>), a NVIDIA card and an Intel processor.&lt;/p>
+&lt;blockquote>
+&lt;p>Mandatory disclaimer: Do not follow this guide. Follow the real guide over in
+the &lt;a href="https://wiki.archlinux.org/title/installation_guide">Arch wiki&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="get-an-installation-iso">Get an installation ISO&lt;/h2>
+&lt;p>Download from &lt;a href="https://www.archlinux.org/download/">www.archlinux.org/download/&lt;/a> the latest ISO and ask a friend with
+windows to use &lt;a href="https://rufus.ie/en/">Rufus&lt;/a> to make a bootable USB stick with
+it. Say thanks and buy them a snack.&lt;/p></description></item></channel></rss>
