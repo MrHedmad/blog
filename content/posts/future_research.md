@@ -10,6 +10,7 @@ I'd like to place a disclaimer here. I am, in no shape or form, thinking that th
 These ideas also apply for *publicly funded* research. Privately funded research might not fit this schema, although I'd argue many aspects can be transversal.
 
 ![Research Flow](https://i.ibb.co/fG9KkGr/research-flow-dark.png)
+> The proposed Open Research workflow. Please note that "Mimir protocols" refer to Structured protocols. 
 
 First, we can define three large areas in the research process:
 - The planning phase, before the project starts, when details about it are defined;
@@ -23,6 +24,7 @@ I refer to this proposed structure as "Open Research" (OR).
 > I often talk about Structured protocols. You can find more information on them [here](https://mrhedmad.github.io/mimir/prep/definitions.html) and [here](https://mrhedmad.github.io/mimir/prep/protocols.html). They are implemented well in the (paid) platform of [protocols.io](https://protocols.io).
 
 > Bullet points starting with `$` are implementation questions that have to be effectively adressed before this research flow can be used in practice.
+
 ## Planning
 The project planning phase is arguably the most important. 
 OR begins as any research project does, by having an idea.
@@ -40,12 +42,12 @@ During this phase, many aspects of the overall project are defined:
 - The methods that will be used to achieve the objective(s), in as much detail as this phase allows, including, if needed, the statistical methods that will be applied to the data;
     - A consultation with a statistician is crucial at this point.
 - What are the expected results, if any.
-    - While the practice of *expecting a result* is arguably negative - it may increase biases or trigger subconscious questionable research practices - it is in the nature of research to expect a particular outcome. It is important therefore to be aware of these potential biases in order to mitigate them.
+    - While the practice of *expecting a result* is arguably negative - it may increase biases or trigger subconscious questionable research practices - it is in the nature of research to expect a particular outcome. It is therefore important to be aware of what the experimenter exoects in order to mitigate potential baises.
 - Where to ask for funding, if it is needed.
 
-Depending on the scope of the project, this document, the *project plan*, may be large or small, but it is important to underline that OF prescribes that *all* projects, of any size, are explicitly planned.
+Depending on the scope of the project, this document, the *project plan*, may be large or small. It is important to underline that OR prescribes that *all* projects, of any size, are explicitly planned.
 
-- $ How can this document be structured? Which guidelines (accounting for scope) should be created to support this project?
+- $ How should this document be structured? Which guidelines (accounting for scope) should be created to support this process?
     - A potential way is to consult pre-registration journals, and re-use their guidelines.
 
 If required, the funding proposal is created and included in the project space.
@@ -57,10 +59,11 @@ Crucially, after the project plan is created, a data steward is assigned to the 
 
 - $ Of course, the institution would need a group of data stewards to support this step.
 
-The data steward then begins guiding the group through the creation of a data management plan. The data types that are expected to be handled in the project are defined. Then, the data steward determines if FAIR Implementation Profiles (FIPs) created in the past can be used to deal with the data types that are planned to be encountered during the project.
-If relevant FIPs exist, they can be reused or adapted to the current situations. Otherwise, they need to be created by the data steward, and deposited in the FIP archive for later reuse.
+The data steward begins guiding the group through the creation of a data management plan. The data types that are expected to be handled in the project are defined. Then, the data steward determines if FAIR Implementation Profiles (FIPs) created in the past can be used to deal with these data tyoes.
+If relevant FIPs exist, they can be reused or adapted to the current situation. Otherwise, new FIPs need to be created by the data steward, and deposited in the FIP archive for later reuse.
 
-- $ What will be contained in a FIP? Where will the FIPs be archived? How can they be made both human- and machine-operable? How can we avoid FIP duplication?
+- $ What should be contained in a FIP? Where should the FIPs be archived? How can they be made both human- and machine-operable? How can we avoid FIP duplication? How can we effectively find relevant FIPs? 
+  - In essence, we would need FAIR FIPs. 
 
 Once data types, volumes, privacy concerns, corresponding FIPs and all other aspects regarding data management are determined, the data management plan can be redacted, and deposited as a deliverable in the project space.
 
@@ -77,10 +80,10 @@ The research process itself involves running experiments or, in general, gatheri
 
 It is crucial that each technically sound experiment or data collection (even if not ultimately useful to the goal of the project) is considered for long term preservation (see, for this, the discard problem).
 
-Tools such as open notebooks, integrated research environments and others are particularly useful to open up research during this step.
-However, due to the fast pace of the research process, the complete transparency at this stage might not be an achievable goal.
+Tools such as open notebooks and integrated research environments are particularly useful to open up research during this step.
+However, due to the fast pace of the active research process, the complete transparency of this stage might not be an achievable goal.
 
-A key aspect that enables future FAIR data creation is the usage of Structured protocols. This allows more or less automatic deposit of experimental data after the experiment is over. Of course, the guiding light during the experimental step is the specific FIP(s) previously defined in the DMP.
+A key aspect that enables future FAIR data creation is the usage of Structured protocols. They enable more or less automatic deposit of experimental data after the experiment is over. Of course, the guiding light during the experimental step is the specific FIP(s) previously defined in the DMP.
 
 The Hot data produced during this step is temporarily stored in an agile repository.
 
@@ -96,25 +99,25 @@ The data steward acts as both support and supervisor, periodically checking if d
 OR should explicitly detail every experiment, with a mini-rationale statement and noting down the considerations made on the results.
 This has two benefits. First, the researcher must consciously process why each experiment is run, and what information can be derived from it. Secondly, encapsulating data from each experiment individually makes later FAIRification both easier and in some cases possible. Structured protocols should help in this regard, if implemented and followed correctly.
 
-> It might be possible to collate FIPs and Structured protocols into a single entity, FAIR Structured Protocols.
+> It might be possible to collate FIPs and Structured protocols into a single entity, which could be called FAIR-Enabled Structured Protocols.
 
-All experiments, regardless of "positive" or "negative" outcome should be considered for preservation. Only if breaks of the structured protocols are identified it may be fair to outright discard the experimental data due to technical failure.
+All experiments, regardless of "positive" or "negative" outcome should be considered for preservation. Only violations of the structured protocols are identified may warrant the outright deletion of the experimental data due to technical failure.
 If the researcher still believes that the experiment failed (regardless of outcome), but a breakage of protocol cannot be clearly determined, the experiment can be retained but marked as potentially faulty.
 
 A single experiment may be trying to answer more than one question, or might contain internal controls for quality assurance. Additionally, information regarding laboratory quality controls and known confounding factors need to be included in the metadata of the experiment.
-It is important that this quality information is properly recorded and reflected in the final metadata.
+It is important that this quality information is individually properly recorded and reflected as separate in the final metadata.
 
 The summarize, each experiment "block' has to carry the following information:
-- The rational of the experiment;
+- The rationale of the experiment;
 - The data itself, potentially already in the structure required by the FIP;
 - The (annotated) run information of the Structured protocol used, as well as its version;
 - The considerations made by the researcher on the resulting experiment.
 
-To collate this different information together, an identifier can be used to mark all related files.
+To group this different information together, an identifier can be used to mark all related files. FAIR Containers such as Research Object Crates might be useful. 
 
 ## Post-experimental phase
-After the (main) experimental phase is completed, it is important to collate all experiments which where not discarded (again, regardless of outcome) and all the considerations made on them into a large document which I'll call *interpretation*.
-This document includes everything that was done during the experiment, and may coincide with the laboratory notebook.
+After the (main) experimental phase is completed, it is important to collate all experiments which where not discarded (again, regardless of outcome) and all considerations made on them into a large document which I'll call *interpretation*.
+This document includes everything that was done during the experimental phase, and may or may not coincide with the laboratory notebook.
 
 This document, when redacted, will be the starting point of both research articles and the way that data will be ultimately deposited in long-term repositories.
 
@@ -123,7 +126,7 @@ The researchers leave the data with the data stewards, and may begin writing the
 The data steward then begins working on archival and long-term preservation of the data.
 According to the FIPs, data archival packages are created for the data that requires to be archived (the Discard problem can be re-evaluated here), and expiration dates (if needed) are placed on the data (see, for instance, Access-based lifetime determination).
 
-When archival packages are ready, they are deposited in the relevant repositories. It is useful to create a space to collate all identifiers of all the data created in a specific project, to preserve the identity of the project itself. A way to do this might be through Nanopublications (see later).
+When archival packages are ready, they are deposited in the relevant repositories. It is useful to create a space to collate all identifiers of all the data created in a specific project, to preserve the identity of the project itself. A way to do this might be through Nanopublications (see later). While project identity is not necessarily useful for data reuse, it might be needed for quality evaluation and authorship rights in the later phases. 
 
 - $ Where will they be deposited in? What shape do they have? What further processing has to be enabled by the structure of the archival packages?
     - All of this information has to be determined while creating the specific FIPs.
@@ -141,9 +144,9 @@ After all data is processed, checked for consistency and archived, and all relev
 This marks the end of the project. However, post-project data support may still be needed if third parties require access to data, for example for controlled data. This can be handled by either the data steward, or the researchers themselves.
 
 - $ Who has the legal responsibility over this data? Who is the data curator?
-    - In theory, the day-to-day control of the data should be given on the institution, which has a longer lifespan than the individual author (while, of course, keeping authorship rights).
+    - In theory, the day-to-day control of the data should be given to the institution, which has a longer lifespan than the individual author (while, of course, keeping authorship rights).
 
-It is important to note that the publication procedure has no influence on whether or not the resulting data and assertions are published. The data is deposited regardless of the attempt at a publication (for a "regular" project) or not (for, e.g. master theses), and whether or not the manuscript is accepted or not.
+It is important to note that the publication procedure has no influence on whether or not the resulting data and assertions are published. The data is deposited regardless of the attempt at a publication (for a "regular" project) or not (for, e.g. master theses), and whether or not the manuscript is accepted.
 This ensures that no insight is lost, regardless of the (potentially fickle) publication procedures.
 
 Green open access, when needed, has to be enforced by the institutions, arguably for ethical responsibilities for publicly-funded resaerch.
