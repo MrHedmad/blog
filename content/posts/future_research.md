@@ -159,7 +159,7 @@ Periodically, these guidelines and policies can be changed following researcher 
 ## Roles and responsibilities
 In this piece, I talk at length about Data Stewards, but never define their role in detail.
 I hope that the reader could pick up the outline of Data Stewards in my conceptualization of the position.
-In any case, I explicitly outline it here. As a source, I use the outline of the FAIRsFAIR competence framework for data stewards (my notes can be found [here](https://mrhedmad.github.io/data-stewardship-knowledgebase/competences.html)), and the Data Stewards: Minimum Viable Skills Profile report from the Skills4EOSC consortium (available on Zenodo [in short form here](https://zenodo.org/records/14006764) and [in long form here](https://zenodo.org/records/8101903)).
+In any case, I explicitly explain it here. As sources, I use the work of the FAIRsFAIR competence framework for data stewards (my notes can be found [here](https://mrhedmad.github.io/data-stewardship-knowledgebase/competences.html)), and the Data Stewards: Minimum Viable Skills Profile report from the Skills4EOSC consortium (available on Zenodo [in short form here](https://zenodo.org/records/14006764) and [in long form here](https://zenodo.org/records/8101903)).
 
 A Data Steward (DS for short) is a professional figure with expertise in the handling of data, with a multifaceted skillset. A Data Steward's primary mission is to preserve data for later reuse, be it for the benefit of an organization, a sovereign state or the whole community.
 
@@ -173,7 +173,7 @@ Secondly, to unlock the data for reuse, the fine conceptualization of what the d
 Thirdly, soft skills such as communication, mediation, leadership capacity, ability to work and coordinate large teams, engagement, and hard skills such as data privacy, ethical knowledge and the ability to draft and put in application policies regarding data are extremely useful for Data Stewards. Indeed, there is a significant need of professionals which both have the domain and technical knowledge to guide the whole data lifecycle, with its multifaceted aspects (see [here](https://rdm.unimi.it/research-data-lifecycle/) and [here](https://privsec.harvard.edu/data-lifecycle) for more on the data lifecycle). Given the centrality of this role, soft communication skills as well as robust core abilities and expertise to deal with the many issues which arise when several varied stakeholders collide (reseachers/data creators, data (re)users, organizations, laws, legal entitities, states and the whole community) is of enormous importance.
 
 Finally, and more relevant for those Data Stewards in academia and generally working for the benefit of the community, Data Stewards are trained in the principles, philosophy and methods of Open Science.
-In this context, Open Science is understood as that practice that aims to render public research more useful for the public, in particular by being more trustworthy, acessible, and aligned with human and societal needs.
+In this context, Open Science is understood as that practice that aims to render public research more useful for the public, in particular by being more trustworthy, accessible, and aligned with human and societal needs.
 According to this framework, Data Stewards are both enablers and teachers of Open Science, in many different contexts.
 For this point, the raw knowledge of the history, practice and philosophy of Open Science is fundamental, as well as other soft skills such as community engagement, lecturing and divulgation.
 
