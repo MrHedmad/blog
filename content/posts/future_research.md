@@ -15,7 +15,7 @@ These ideas also apply for *publicly funded* research. Privately funded research
 First, we can define three large areas in the research process:
 - The planning phase, before the project starts, when details about it are defined;
 - The research process itself, when experiments are executed;
-- The dissemination of the conducted research;
+- The preservation and dissemination of the conducted research;
 
 Data stewards and Open Science principles can help streamline and open up all three steps, creating a new, of fundamentally higher quality, research procedure.
 I refer to this proposed structure as "Open Research" (OR).
@@ -115,7 +115,7 @@ The summarize, each experiment "block' has to carry the following information:
 
 To group this different information together, an identifier can be used to mark all related files. FAIR Containers such as Research Object Crates (ROCrates) might be useful. 
 
-## Post-experimental phase
+## Preservation and dissemination
 After the (main) experimental phase is completed, it is important to collate all experiments which where not discarded (again, regardless of outcome) and all considerations made on them into a large document which I'll call *interpretation*.
 This document includes everything that was done during the experimental phase, and may or may not coincide with the laboratory notebook.
 
