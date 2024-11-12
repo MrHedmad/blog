@@ -34,7 +34,7 @@ OR extends this idea to every project, big or small, funded through grants or no
 When an individual or team is committed to the execution of the project, a *project space* is created with the ability to store project-level documentation and metadata. This platform is then used as a centralized place to effectively plan all the other steps.
 
 - $ Which technology will be used to create the *project space*?
-    - https://osf.io/ is a possibility.
+    - https://osf.io/ is a possibility, as well as Virtual Research Environments and more generic Electronic Lab Notebooks.
 
 During this phase, many aspects of the overall project are defined:
 - The rationale and assumptions that form the background of the project;
@@ -42,7 +42,7 @@ During this phase, many aspects of the overall project are defined:
 - The methods that will be used to achieve the objective(s), in as much detail as this phase allows, including, if needed, the statistical methods that will be applied to the data;
     - A consultation with a statistician is crucial at this point.
 - What are the expected results, if any.
-    - While the practice of *expecting a result* is arguably negative - it may increase biases or trigger subconscious questionable research practices - it is in the nature of research to expect a particular outcome. It is therefore important to be aware of what the experimenter exoects in order to mitigate potential baises.
+    - While the practice of *expecting a result* is arguably negative - it may increase biases or trigger subconscious questionable research practices - it is in the nature of research to expect a particular outcome. It is therefore important to be aware of what the experimenter expects in order to mitigate potential biases.
 - Where to ask for funding, if it is needed.
 
 Depending on the scope of the project, this document, the *project plan*, may be large or small. It is important to underline that OR prescribes that *all* projects, of any size, are explicitly planned.
@@ -59,7 +59,7 @@ Crucially, after the project plan is created, a data steward is assigned to the 
 
 - $ Of course, the institution would need a group of data stewards to support this step.
 
-The data steward begins guiding the group through the creation of a data management plan. The data types that are expected to be handled in the project are defined. Then, the data steward determines if FAIR Implementation Profiles (FIPs) created in the past can be used to deal with these data tyoes.
+The data steward begins guiding the group through the creation of a data management plan. The data types that are expected to be handled in the project are defined. Then, the data steward determines if FAIR Implementation Profiles (FIPs) created in the past can be used to deal with these data types.
 If relevant FIPs exist, they can be reused or adapted to the current situation. Otherwise, new FIPs need to be created by the data steward, and deposited in the FIP archive for later reuse.
 
 - $ What should be contained in a FIP? Where should the FIPs be archived? How can they be made both human- and machine-operable? How can we avoid FIP duplication? How can we effectively find relevant FIPs? 
@@ -113,7 +113,7 @@ The summarize, each experiment "block' has to carry the following information:
 - The (annotated) run information of the Structured protocol used, as well as its version;
 - The considerations made by the researcher on the resulting experiment.
 
-To group this different information together, an identifier can be used to mark all related files. FAIR Containers such as Research Object Crates might be useful. 
+To group this different information together, an identifier can be used to mark all related files. FAIR Containers such as Research Object Crates (ROCrates) might be useful. 
 
 ## Post-experimental phase
 After the (main) experimental phase is completed, it is important to collate all experiments which where not discarded (again, regardless of outcome) and all considerations made on them into a large document which I'll call *interpretation*.
@@ -123,8 +123,8 @@ This document, when redacted, will be the starting point of both research articl
 
 The researchers leave the data with the data stewards, and may begin writing the manuscript for the publication process.
 
-The data steward then begins working on archival and long-term preservation of the data.
-According to the FIPs, data archival packages are created for the data that requires to be archived (the Discard problem can be re-evaluated here), and expiration dates (if needed) are placed on the data (see, for instance, Access-based lifetime determination).
+The data steward then begins working on archival and long-term preservation of the data, including the determination of access policies and other FAIR-enabling infrastructural choices.
+According to the FIPs, data archival packages are created for the data that requires to be archived (the Discard problem can be re-evaluated here), and expiration dates (if needed) are placed on the data (see, for instance, Access-based lifetime determination). Data archival packages are collections of data, metadata, identifiers and generally all knowledge that is required for the data to be archived, including all of the information for its effective later reuse.
 
 When archival packages are ready, they are deposited in the relevant repositories. It is useful to create a space to collate all identifiers of all the data created in a specific project, to preserve the identity of the project itself. A way to do this might be through Nanopublications (see later). While project identity is not necessarily useful for data reuse, it might be needed for quality evaluation and authorship rights in the later phases. 
 
@@ -155,6 +155,44 @@ Green open access, when needed, has to be enforced by the institutions, arguably
 To keep this process able to comply with the needs of researchers, post-project meetings to define what worked and what did not, what can be done better, and other criticalities has to be performed. This self-audit has the be accessible for aggregate statistics to be performed, so standard protocols (such as feedback forms) and other techniques should be used.
 
 Periodically, these guidelines and policies can be changed following researcher feedback. In particular, FIPs can be re-evaluated for relevance and fitness-of-purpose.
+
+## Roles and responsibilities
+In this piece, I talk at length about Data Stewards, but never define their role in detail.
+I hope that the reader could pick up the outline of Data Stewards in my conceptualization of the position.
+In any case, I explicitly outline it here. As a source, I use the outline of the FAIRsFAIR competence framework for data stewards (my notes can be found [here](https://mrhedmad.github.io/data-stewardship-knowledgebase/competences.html)), and the Data Stewards: Minimum Viable Skills Profile report from the Skills4EOSC consortium (available on Zenodo [in short form here](https://zenodo.org/records/14006764) and [in long form here](https://zenodo.org/records/8101903)).
+
+A Data Steward (DS for short) is a professional figure with expertise in the handling of data, with a multifaceted skillset. A Data Steward's primary mission is to preserve data for later reuse, be it for the benefit of an organization, a sovereign state or the whole community.
+
+First, as modern data is overwhelmingly digitized, a DS has technical knowledge in the strategies to harvest, store, manipulate and preserve digital data. This includes the creation of data-processing pipelines (e.g. for [data ingestion](https://en.wikipedia.org/wiki/Data_preparation)), the design and administration (but potentially not the maintenance) of data archives and repositories, and the day-to-day handling of edge cases encountered during data management. Concrete skills include programming, knowledge of data formats and computer systems, concepts of data and systems security, and more.
+While a DS's day-to-day may not involve significant [data wrangling](https://en.wikipedia.org/wiki/Data_wrangling) or otherwise data handling *per se*, it is important that a DS understands what these processes involve, as they both define the boundary of what is possible to do with data, and how data is ultimately used by the data (re)users.
+
+Additionally, as software can be, in a way, seen as *data that can be executed*, knowlege in the preservation of software for later execution is important.
+
+Secondly, to unlock the data for reuse, the fine conceptualization of what the data is describing and the epistemic need that it is trying to fulfill need to be understood, made explicit, and preserved. For this reason, a Data Steward has factual knowledge and expertise in specific application domains (read: Arts, Biology, Earth Sciences, Medicine, etc...), as well as familiarity with those ways in which the reusable data they strive to create will be, in order to meet the demands of their fields and organizations. Additionally, as ontologies and supra-onthological frameworks are routinely used to address these concerns, knowlede in the creation and usage of these systems is fundamental for any Data Steward.
+
+Thirdly, soft skills such as communication, mediation, leadership capacity, ability to work and coordinate large teams, engagement, and hard skills such as data privacy, ethical knowledge and the ability to draft and put in application policies regarding data are extremely useful for Data Stewards. Indeed, there is a significant need of professionals which both have the domain and technical knowledge to guide the whole data lifecycle, with its multifaceted aspects (see [here](https://rdm.unimi.it/research-data-lifecycle/) and [here](https://privsec.harvard.edu/data-lifecycle) for more on the data lifecycle). Given the centrality of this role, soft communication skills as well as robust core abilities and expertise to deal with the many issues which arise when several varied stakeholders collide (reseachers/data creators, data (re)users, organizations, laws, legal entitities, states and the whole community) is of enormous importance.
+
+Finally, and more relevant for those Data Stewards in academia and generally working for the benefit of the community, Data Stewards are trained in the principles, philosophy and methods of Open Science.
+In this context, Open Science is understood as that practice that aims to render public research more useful for the public, in particular by being more trustworthy, acessible, and aligned with human and societal needs.
+According to this framework, Data Stewards are both enablers and teachers of Open Science, in many different contexts.
+For this point, the raw knowledge of the history, practice and philosophy of Open Science is fundamental, as well as other soft skills such as community engagement, lecturing and divulgation.
+
+## FAIR Implementation Profiles
+As the keen reader will have undoubtedly noticed, I've delegated many important and hard tasks to the FAIR Implementation Profiles (FIPs). Here I attempt to delineate these issues, providing my idea of what FIPs are and some of the characteristics that they require in the context of Open Research. While the confrontation of these issues is relagated to a later data and open to debate (it is an open question in the above text), here I hope to bound this conversation to more defined areas.
+
+As a summary, and basis for this section, I list here all the aspects of Open Research that depend on the FIPs:
+- The specific data creation protocols and data types that the FIP applies to;
+- The raw format of the data created by the data collection process (e.g. the machine that does the measurement);
+- How this raw data is stored;
+- How the raw data is preprocessed to create experiment-level data packages, containing all the data of the same type created by the specific experiment;
+- The required metadata, characteristics and formats that the data has to have to create an archival package, including which ontologies will be used to explicitly define the semantics of the data, and all other aspects needed to make the data FAIR;
+- The archival strategies that the archival packages are subjected to, including defining which repository to use.
+
+Potentially more aspects should be covered by the FIPs, but they are yet unclear to me. In any case, the burden placed on the FIPs is enormous. However, this key role of FIPs make them ideal candidates as facilitators of data handling. Executable FIPs, whereas an infrastructure may be able to guide the primary data generators through the process of creating, storing, preprocessing, annotating with metadata, and ultimately depositing the data can be envisioned.
+
+Of course, the task of creating such a FIP for all the potential data types is enourmous, and potentially infinite. However, such strategies can be reused over time, slowly eroding away the proble of non-reusable data.
+
+FIPs are not to be intended as prescritive. In no way the presence (or more importantly the absence) of a FIP has to have any influence on the freedom of experimentation that every researcher has. It is not the job of FIPs - or Data Stewards for that matter - to legislate what can and cannot be done with data. Their only role, and I cannot stress this enough, is to support the proper handling of data for the benefit of the researchers themselves and crucially for future data (re)users.
 
 ## Benefits of Open Research
 This research framework has several inherent benefits. I detail some of them here.
