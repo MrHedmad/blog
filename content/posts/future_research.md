@@ -48,7 +48,7 @@ During this phase, many aspects of the overall project are defined:
 Depending on the scope of the project, this document, the *project plan*, may be large or small. It is important to underline that OR prescribes that *all* projects, of any size, are explicitly planned.
 
 - $ How should this document be structured? Which guidelines (accounting for scope) should be created to support this process?
-    - A potential way is to consult pre-registration journals, and re-use their guidelines.
+    - A potential way is to consult pre-registration platforms, and re-use their guidelines.
 
 If required, the funding proposal is created and included in the project space.
 
