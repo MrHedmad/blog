@@ -13,12 +13,11 @@ It has UEFI Boot and a single hard disk of 500Gb. It has an Italian keyboard
 (&lt;code>it&lt;/code>), a NVIDIA card and an Intel processor.&lt;/p>
 &lt;blockquote>
 &lt;p>Mandatory disclaimer: Do not follow this guide. Follow the real guide over in
-the &lt;a href="https://wiki.archlinux.org/title/installation_guide">Arch wiki&lt;/a>.&lt;/p>
-&lt;/blockquote>
+the &lt;a href="https://wiki.archlinux.org/title/installation_guide">Arch wiki&lt;/a>.&lt;/p>&lt;/blockquote>
 &lt;h2 id="get-an-installation-iso">Get an installation ISO&lt;/h2>
 &lt;p>Download from &lt;a href="https://www.archlinux.org/download/">www.archlinux.org/download/&lt;/a> the latest ISO and ask a friend with
 windows to use &lt;a href="https://rufus.ie/en/">Rufus&lt;/a> to make a bootable USB stick with
-it. Say thanks and buy them a snack.&lt;/p></description></item><item><title>About</title><link>https://mrhedmad.github.io/blog/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mrhedmad.github.io/blog/about/</guid><description>&lt;img src="https://mrhedmad.github.io/blog/blog/resources/images/profile.png" alt="My Dumb Face" class="right" style="border-radius: 8px; width: 200px; float: right; border:10px solid transparent;" />
+it. Say thanks and buy them a snack.&lt;/p></description></item><item><title>About</title><link>https://mrhedmad.github.io/blog/about/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mrhedmad.github.io/blog/about/</guid><description>&lt;img src="https://mrhedmad.github.io/blog/resources/images/profile.png" alt="My Dumb Face" class="right" style="border-radius: 8px; width: 200px; float: right; border:10px solid transparent;" />
 
 
 &lt;p>Hello, my name is Luca and this is my blog, where I post about the things that
