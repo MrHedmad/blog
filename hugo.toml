@@ -10,8 +10,6 @@ copyright = "CC-BY 4.0 - Luca Visentin - 2024"
 pygmentsstyle = "github-dark" # See https://pygments.org/styles/
 pygmentscodefences = true # Allows to use ```html, for instance
 
-paginate = 5
-
 [params]
    mode = "dark"
    useCDN = true
