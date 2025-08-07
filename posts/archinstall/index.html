@@ -1,83 +1,82 @@
-<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Arch Linux Installation - Open Bytes</title><meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="All the steps I use to install Arch on my laptop. May be useful to future me or to someone who needs a quick reference guide."><meta property="og:image" content><meta property="og:url" content="https://mrhedmad.github.io/blog/posts/archinstall/"><meta property="og:site_name" content="Open Bytes"><meta property="og:title" content="Arch Linux Installation"><meta property="og:description" content="All the steps I use to install Arch on my laptop. May be useful to future me or to someone who needs a quick reference guide."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-04-10T00:00:00+00:00"><meta property="article:modified_time" content="2022-04-10T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Arch Linux Installation"><meta name=twitter:description content="All the steps I use to install Arch on my laptop. May be useful to future me or to someone who needs a quick reference guide."><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://mrhedmad.github.io/blog/css/main.88accdb1b56d650bdf4ccffab56f659967edb0e09f956255e516b6daf06ffdf5.css><link id=darkModeStyle rel=stylesheet type=text/css href=https://mrhedmad.github.io/blog/css/dark.b3ed1a4cd02b1397a340556e323b430fb5cfa721c42fca542dd3109ff099a3fc.css><script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["[","]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]},loader:{load:["output/chtml"]}}</script><script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js></script></head><body><div class=content><header><div class=main><a href=https://mrhedmad.github.io/blog/>Open Bytes</a></div><nav><a href=/blog/>Home</a>
-<a href=/blog/posts>Posts</a>
-<a href=/blog/about>About</a></nav></header><main><article><div class=title><h1 class=title>Arch Linux Installation</h1><div class=meta>Posted on Apr 10, 2022</div></div><section class=body><p>These are my short notes on installing Arch on my laptop (an Asus Zenbook 14).
+<!doctype html><html><head lang=en><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>Arch Linux Installation - Open Bytes</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="All the steps I use to install Arch on my laptop. May be useful to future me or to someone who needs a quick reference guide."><meta property="og:image" content><meta property="og:url" content="blog.hedmad.eu/posts/archinstall/"><meta property="og:site_name" content="Open Bytes"><meta property="og:title" content="Arch Linux Installation"><meta property="og:description" content="All the steps I use to install Arch on my laptop. May be useful to future me or to someone who needs a quick reference guide."><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2022-04-10T00:00:00+00:00"><meta property="article:modified_time" content="2022-04-10T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="Arch Linux Installation"><meta name=twitter:description content="All the steps I use to install Arch on my laptop. May be useful to future me or to someone who needs a quick reference guide."><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script><link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@1,500&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel=stylesheet><link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel=stylesheet><link rel=stylesheet type=text/css media=screen href=blog.hedmad.eu/css/main.88accdb1b56d650bdf4ccffab56f659967edb0e09f956255e516b6daf06ffdf5.css><link id=darkModeStyle rel=stylesheet type=text/css href=blog.hedmad.eu/css/dark.b3ed1a4cd02b1397a340556e323b430fb5cfa721c42fca542dd3109ff099a3fc.css><script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["[","]"]],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:["script","noscript","style","textarea","pre"]},loader:{load:["output/chtml"]}}</script><script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js></script></head><body><div class=content><header><div class=main><a href=/blog/>Open Bytes</a></div><nav><a href=blog.hedmad.eu/>Home</a>
+<a href=blog.hedmad.eu/posts>Posts</a>
+<a href=blog.hedmad.eu/about>About</a></nav></header><main><article><div class=title><h1 class=title>Arch Linux Installation</h1><div class=meta>Posted on Apr 10, 2022</div></div><section class=body><p>These are my short notes on installing Arch on my laptop (an Asus Zenbook 14).
 It has UEFI Boot and a single hard disk of 500Gb. It has an Italian keyboard
 (<code>it</code>), a NVIDIA card and an Intel processor.</p><blockquote><p>Mandatory disclaimer: Do not follow this guide. Follow the real guide over in
 the <a href=https://wiki.archlinux.org/title/installation_guide>Arch wiki</a>.</p></blockquote><h2 id=get-an-installation-iso>Get an installation ISO</h2><p>Download from <a href=https://www.archlinux.org/download/>www.archlinux.org/download/</a> the latest ISO and ask a friend with
 windows to use <a href=https://rufus.ie/en/>Rufus</a> to make a bootable USB stick with
 it. Say thanks and buy them a snack.</p><p>Plug that bad boy in and hold <code>F2</code> as the pc is booting up. Enter the BIOS and
 set the USB stick to the highest boot priority. Once in the arch installation
-environment, continue on.</p><h2 id=setup-the-setup-environment>Setup the setup environment</h2><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Set the language</span>
+environment, continue on.</p><h2 id=setup-the-setup-environment>Setup the setup environment</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Set the language</span>
 </span></span><span style=display:flex><span>loadkeys it
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Connect to wifi</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Connect to wifi</span>
 </span></span><span style=display:flex><span>iwctl
 </span></span></code></pre></div><p>Inside <code>iwctl</code> you should use <code>station wlan0 connect &lt;some wifi></code>. It will ask
-for the password interactively. <code>ping archlinux.org</code> to see if it worked.</p><p>Set the time, so the mirrors do no fail because they are in the future:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>timedatectl set-ntp true
-</span></span></code></pre></div><h2 id=partition-the-disk>Partition the disk</h2><p>I assume that the disk is <code>/dev/sda</code>, but change it if it&rsquo;s different under <code>fdisk -l</code>.</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>fdisk /dev/sda
-</span></span><span style=display:flex><span>&gt; g <span style=color:#8b949e;font-style:italic># New GUID partition table</span>
-</span></span><span style=display:flex><span>&gt; n <span style=color:#8b949e;font-style:italic># New partition</span>
-</span></span><span style=display:flex><span>&gt; <span style=color:#8b949e;font-style:italic># Default ID</span>
-</span></span><span style=display:flex><span>&gt; <span style=color:#8b949e;font-style:italic># Default start sector</span>
-</span></span><span style=display:flex><span>&gt; +500M <span style=color:#8b949e;font-style:italic># Min BOOT is 300Mb</span>
-</span></span><span style=display:flex><span>&gt; t <span style=color:#8b949e;font-style:italic># Change partition type</span>
-</span></span><span style=display:flex><span>&gt; <span style=color:#8b949e;font-style:italic># Default ID</span>
-</span></span><span style=display:flex><span>&gt; <span style=color:#a5d6ff>1</span> <span style=color:#8b949e;font-style:italic># EFI system</span>
+for the password interactively. <code>ping archlinux.org</code> to see if it worked.</p><p>Set the time, so the mirrors do no fail because they are in the future:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>timedatectl set-ntp true
+</span></span></code></pre></div><h2 id=partition-the-disk>Partition the disk</h2><p>I assume that the disk is <code>/dev/sda</code>, but change it if it&rsquo;s different under <code>fdisk -l</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>fdisk /dev/sda
+</span></span><span style=display:flex><span>&gt; g <span style=color:#75715e># New GUID partition table</span>
+</span></span><span style=display:flex><span>&gt; n <span style=color:#75715e># New partition</span>
+</span></span><span style=display:flex><span>&gt; <span style=color:#75715e># Default ID</span>
+</span></span><span style=display:flex><span>&gt; <span style=color:#75715e># Default start sector</span>
+</span></span><span style=display:flex><span>&gt; +500M <span style=color:#75715e># Min BOOT is 300Mb</span>
+</span></span><span style=display:flex><span>&gt; t <span style=color:#75715e># Change partition type</span>
+</span></span><span style=display:flex><span>&gt; <span style=color:#75715e># Default ID</span>
+</span></span><span style=display:flex><span>&gt; <span style=color:#ae81ff>1</span> <span style=color:#75715e># EFI system</span>
 </span></span><span style=display:flex><span>&gt; n
-</span></span><span style=display:flex><span>&gt; <span style=color:#8b949e;font-style:italic># Default ID</span>
-</span></span><span style=display:flex><span>&gt; <span style=color:#8b949e;font-style:italic># Default start sector</span>
+</span></span><span style=display:flex><span>&gt; <span style=color:#75715e># Default ID</span>
+</span></span><span style=display:flex><span>&gt; <span style=color:#75715e># Default start sector</span>
 </span></span><span style=display:flex><span>&gt; +8G
 </span></span><span style=display:flex><span>&gt; t
-</span></span><span style=display:flex><span>&gt; <span style=color:#8b949e;font-style:italic># Default ID</span>
-</span></span><span style=display:flex><span>&gt; <span style=color:#a5d6ff>19</span> <span style=color:#8b949e;font-style:italic># Linux SWAP</span>
+</span></span><span style=display:flex><span>&gt; <span style=color:#75715e># Default ID</span>
+</span></span><span style=display:flex><span>&gt; <span style=color:#ae81ff>19</span> <span style=color:#75715e># Linux SWAP</span>
 </span></span><span style=display:flex><span>&gt; n
-</span></span><span style=display:flex><span>&gt; <span style=color:#8b949e;font-style:italic># Default ID</span>
-</span></span><span style=display:flex><span>&gt; <span style=color:#8b949e;font-style:italic># Default start sector</span>
-</span></span><span style=display:flex><span>&gt; <span style=color:#8b949e;font-style:italic># Default end sector - Rest of disk</span>
+</span></span><span style=display:flex><span>&gt; <span style=color:#75715e># Default ID</span>
+</span></span><span style=display:flex><span>&gt; <span style=color:#75715e># Default start sector</span>
+</span></span><span style=display:flex><span>&gt; <span style=color:#75715e># Default end sector - Rest of disk</span>
 </span></span><span style=display:flex><span>&gt; t
-</span></span><span style=display:flex><span>&gt; <span style=color:#8b949e;font-style:italic># Default ID</span>
-</span></span><span style=display:flex><span>&gt; <span style=color:#a5d6ff>20</span> <span style=color:#8b949e;font-style:italic># Linux filesystem</span>
-</span></span><span style=display:flex><span>&gt; p <span style=color:#8b949e;font-style:italic># Print table - check if everything is OK</span>
-</span></span><span style=display:flex><span>&gt; w <span style=color:#8b949e;font-style:italic># Write to disk</span>
-</span></span></code></pre></div><p>Make the filesystems. I assume that <code>/dev/sda1</code> is boot, <code>/dev/sda2</code> is swap, and <code>dev/sda3</code> is root.</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>mkfs.fat -F <span style=color:#a5d6ff>32</span> /dev/sda1
+</span></span><span style=display:flex><span>&gt; <span style=color:#75715e># Default ID</span>
+</span></span><span style=display:flex><span>&gt; <span style=color:#ae81ff>20</span> <span style=color:#75715e># Linux filesystem</span>
+</span></span><span style=display:flex><span>&gt; p <span style=color:#75715e># Print table - check if everything is OK</span>
+</span></span><span style=display:flex><span>&gt; w <span style=color:#75715e># Write to disk</span>
+</span></span></code></pre></div><p>Make the filesystems. I assume that <code>/dev/sda1</code> is boot, <code>/dev/sda2</code> is swap, and <code>dev/sda3</code> is root.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>mkfs.fat -F <span style=color:#ae81ff>32</span> /dev/sda1
 </span></span><span style=display:flex><span>mkswap /dev/sda2
 </span></span><span style=display:flex><span>mkfs.ext4 /dev/sda3
-</span></span></code></pre></div><p>Mount the filesystems:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>mount /dev/sda3 /mnt
+</span></span></code></pre></div><p>Mount the filesystems:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>mount /dev/sda3 /mnt
 </span></span><span style=display:flex><span>mkdir /mnt/boot
 </span></span><span style=display:flex><span>mount /dev/sda1 /mnt/boot
 </span></span><span style=display:flex><span>swapon /dev/sda2
-</span></span></code></pre></div><h2 id=pacstrapping>Pacstrapping</h2><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Update mirrors</span>
-</span></span><span style=display:flex><span>reflector --latest <span style=color:#a5d6ff>100</span> --country <span style=color:#a5d6ff>&#39;Italy,Germany,&#39;</span> --sort rate --save /etc/pacman.d/mirrorlist
+</span></span></code></pre></div><h2 id=pacstrapping>Pacstrapping</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Update mirrors</span>
+</span></span><span style=display:flex><span>reflector --latest <span style=color:#ae81ff>100</span> --country <span style=color:#e6db74>&#39;Italy,Germany,&#39;</span> --sort rate --save /etc/pacman.d/mirrorlist
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Pacstrap basic stuff:</span>
-</span></span><span style=display:flex><span>pacstrap /mnt base linux-zen linux-zen-headers linux-firmware base-devel <span style=color:#79c0ff>\
-</span></span></span><span style=display:flex><span><span style=color:#79c0ff></span>  sudo man-db man-pages texinfo intel-ucode <span style=color:#79c0ff>\
-</span></span></span><span style=display:flex><span><span style=color:#79c0ff></span>  iwd neovim python git curl
+</span></span><span style=display:flex><span><span style=color:#75715e># Pacstrap basic stuff:</span>
+</span></span><span style=display:flex><span>pacstrap /mnt base linux-zen linux-zen-headers linux-firmware base-devel <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  sudo man-db man-pages texinfo intel-ucode <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  iwd neovim python git curl
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Generate an fstab file:</span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># This allows the kernel to know what to mount at boot, and do it automatically.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Generate an fstab file:</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># This allows the kernel to know what to mount at boot, and do it automatically.</span>
 </span></span><span style=display:flex><span>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
-</span></span></code></pre></div><p>Now we can <code>chroot</code> in the new environment with <code>arch-chroot /mnt</code>.</p><h2 id=setup-the-installation>Setup the installation</h2><p>While inside the new installation (previous step):</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Set the local clock</span>
+</span></span></code></pre></div><p>Now we can <code>chroot</code> in the new environment with <code>arch-chroot /mnt</code>.</p><h2 id=setup-the-installation>Setup the installation</h2><p>While inside the new installation (previous step):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># Set the local clock</span>
 </span></span><span style=display:flex><span>ln -sf /usr/share/zoneinfo/Europe/Rome /etc/localtime
 </span></span><span style=display:flex><span>hwclock --systohc
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># `nvim /etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8`.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># `nvim /etc/locale.gen` and uncomment `en_US.UTF-8 UTF-8`.</span>
 </span></span><span style=display:flex><span>locale-gen
-</span></span><span style=display:flex><span>echo <span style=color:#a5d6ff>&#34;LANG=en_US.UTF-8&#34;</span> &gt; /etc/locale.conf
-</span></span><span style=display:flex><span>echo <span style=color:#a5d6ff>&#34;KEYMAP=it&#34;</span> &gt; /etc/vconsole.conf
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;LANG=en_US.UTF-8&#34;</span> &gt; /etc/locale.conf
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;KEYMAP=it&#34;</span> &gt; /etc/vconsole.conf
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Give the machine an hostname:</span>
-</span></span><span style=display:flex><span>echo <span style=color:#a5d6ff>&#34;neutrino&#34;</span> &gt; /etc/hotname
+</span></span><span style=display:flex><span><span style=color:#75715e># Give the machine an hostname:</span>
+</span></span><span style=display:flex><span>echo <span style=color:#e6db74>&#34;neutrino&#34;</span> &gt; /etc/hotname
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Change the root password</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Change the root password</span>
 </span></span><span style=display:flex><span>passwd
-</span></span></code></pre></div><p>If pac-strapping does not work due to keyring stuff, try:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>pacman-keys --init
+</span></span></code></pre></div><p>If pac-strapping does not work due to keyring stuff, try:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>pacman-keys --init
 </span></span><span style=display:flex><span>pacman-keys --populate
 </span></span><span style=display:flex><span>pacman -Syu achlinux-keyring
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Possibly follow with another pacman-keys --populate</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Possibly follow with another pacman-keys --populate</span>
 </span></span></code></pre></div><h3 id=setup-the-bootloader>Setup the bootloader</h3><p>I use the simplest of the simple bootloaders, <code>systemd-boot</code>.
 It is already in the installation, as it is part of <code>systemd</code>. Install it to the boot
-folder:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>bootctl install
+folder:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>bootctl install
 </span></span></code></pre></div><p>Make the loader configurations. If you boot and the kernel tells you &ldquo;You&rsquo;re on your own, good luck&rdquo;,
 you probably fucked up this step (you can fix it by returning to the live
 installation, with the usb key, and redoing this step).
@@ -97,7 +96,7 @@ linux  /vmlinuz-linux-zen
 initrd /intel-ucode.img
 initrd /initramfs-linux-zen-fallback.img   &lt;&lt;&lt; This is the only line that changed
 options root=/dev/sda3
-</code></pre><p>We can now reboot:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>exit <span style=color:#8b949e;font-style:italic># exit the chroot environment</span>
+</code></pre><p>We can now reboot:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>exit <span style=color:#75715e># exit the chroot environment</span>
 </span></span><span style=display:flex><span>umount -R /mnt
 </span></span><span style=display:flex><span>reboot
 </span></span></code></pre></div><p>If everything goes to plan, you should get a prompt asking for username (<code>root</code>) and a password
@@ -116,21 +115,21 @@ IgnoreCarrierLoss=3s
 </code></pre><p>Edit the <code>/etc/systemd/resolved.conf</code> file to set some DNS addresses.
 Put some DNS servers from the examples (just the numerical address) to <code>DNS=</code>
 and <code>fallback-DNS=</code>. Leave a space between the different addresses.
-Enable the services:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>systemctl enable --now systemd-resolved.service
+Enable the services:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>systemctl enable --now systemd-resolved.service
 </span></span><span style=display:flex><span>systemctl enable --now systemd-networkd.service
 </span></span><span style=display:flex><span>systemctl enable --now iwd.service
 </span></span></code></pre></div><p>Now you can use <code>iwctl</code> to setup a connection just like the installation environment.</p><p>Remember to set the NTP servers and enable NTP sync. Edit
 <code>/etc/systemd/timesyncd.conf</code> and add any NTP servers you like (I use arch&rsquo;s),
 and enable <code>systemd-timesyncd.service</code> if not enabled yet.</p><h1 id=post-installation>Post installation</h1><p>Now the live environment boots and has internet access, but it is not really
-useful as-is.</p><h2 id=make-a-new-user>Make a new user</h2><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>groupadd docker
+useful as-is.</p><h2 id=make-a-new-user>Make a new user</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>groupadd docker
 </span></span><span style=display:flex><span>useradd -m -G wheel,docker -s /bin/zsh hedmad
 </span></span><span style=display:flex><span>passwd hedmad
 </span></span></code></pre></div><p>Edit <code>/etc/sudoers</code> and uncomment the lines giving the <code>wheel</code> group access to
-<code>sudo</code>. This should be done with <code>visudo</code>:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>export <span style=color:#79c0ff>EDITOR</span><span style=color:#ff7b72;font-weight:700>=</span>/usr/bin/nvim
+<code>sudo</code>. This should be done with <code>visudo</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>export EDITOR<span style=color:#f92672>=</span>/usr/bin/nvim
 </span></span><span style=display:flex><span>visudo
 </span></span></code></pre></div><p>Now we can restart and login with our user <code>hedmad</code>. <code>zsh</code> will ask some
 variables to be set, but we can just ignore it and select <code>q</code> (or <code>0</code>) and skip
-this, as we&rsquo;re gonna pull in the configs with <code>chezmoi</code>.</p><h2 id=setup-yay>Setup <code>yay</code></h2><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>pacman -S --needed git base-devel
+this, as we&rsquo;re gonna pull in the configs with <code>chezmoi</code>.</p><h2 id=setup-yay>Setup <code>yay</code></h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>pacman -S --needed git base-devel
 </span></span><span style=display:flex><span>git clone https://aur.archlinux.org/yay.git
 </span></span><span style=display:flex><span>cd yay
 </span></span><span style=display:flex><span>makepkg -si
@@ -139,12 +138,12 @@ this, as we&rsquo;re gonna pull in the configs with <code>chezmoi</code>.</p><h2
 </span></span></code></pre></div><h2 id=xorg>Xorg</h2><p>Xorg is the most used display server. It is what renders the windows you see.
 Install the <code>xorg</code> package and the graphics card drivers. I use the proprietary
 drivers as the open-source ones did not play nice with PRIME rendering (for some
-reason I don&rsquo;t really get):</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#8b949e;font-style:italic># As we are using the zen kernel, the nvidia drivers need to be recompiled</span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># at every update. This is done automatically with `dkms`. To run a progam with</span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># accelleration, run `prime-run &lt;executable&gt;`.</span>
+reason I don&rsquo;t really get):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#75715e># As we are using the zen kernel, the nvidia drivers need to be recompiled</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># at every update. This is done automatically with `dkms`. To run a progam with</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># accelleration, run `prime-run &lt;executable&gt;`.</span>
 </span></span><span style=display:flex><span>sudo pacman -S xorg nvidia-dkms nvidia-prime
 </span></span></code></pre></div><p>We need a wait to start X. We could use a display manager, but this is arch,
-so it&rsquo;s bloat. We install <code>xinit</code> to start X:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>sudo pacman -S xorg-xinit
+so it&rsquo;s bloat. We install <code>xinit</code> to start X:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>sudo pacman -S xorg-xinit
 </span></span></code></pre></div><p>Add to Xorg the keyboard layout. Edit <code>/etc/X11/xorg.conf.d/00-keyboard.conf</code>:</p><pre tabindex=0><code>Section &#34;InputClass&#34;
         Identifier &#34;system-keyboard&#34;
         MatchIsKeyboard &#34;on&#34;
@@ -155,55 +154,55 @@ so it&rsquo;s bloat. We install <code>xinit</code> to start X:</p><div class=hig
 EndSection
 </code></pre><p>I use the it keyboard without dead keys as my main (built in) keyboard, but
 sometimes I need to swap to us to use my portable Corne keyboard (that uses
-the US layout).</p><p>Pull in the config files with <code>chezmoi</code>, so we can use them when needed:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>chezmoi init https://github.com/MrHedmad/dotfiles.git
-</span></span></code></pre></div><h2 id=a-desktop>A desktop</h2><p>The terminal is cool and all, but we would like a desktop. I choose <code>plasma</code>, from KDE. I also add <code>NetworkManager</code> to better handle GUI network manager. It also works with <code>iwd</code> after some configuration (refer to the wiki).</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo pacman -Syu plasma networkmanager kde-applications
+the US layout).</p><p>Pull in the config files with <code>chezmoi</code>, so we can use them when needed:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>chezmoi init https://github.com/MrHedmad/dotfiles.git
+</span></span></code></pre></div><h2 id=a-desktop>A desktop</h2><p>The terminal is cool and all, but we would like a desktop. I choose <code>plasma</code>, from KDE. I also add <code>NetworkManager</code> to better handle GUI network manager. It also works with <code>iwd</code> after some configuration (refer to the wiki).</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>sudo pacman -Syu plasma networkmanager kde-applications
 </span></span></code></pre></div><h2 id=get-a-web-browser>Get a web browser</h2><p>To look at this guide more cleanly (and get off your phone), install a web
-browser. I choose firefox:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>sudo pacman -S firefox
+browser. I choose firefox:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>sudo pacman -S firefox
 </span></span></code></pre></div><p>I use a theme <a href=https://addons.mozilla.org/en-US/firefox/addon/nicothin-dark-theme/>found here</a>.</p><h2 id=configure-the-terminal>Configure the terminal</h2><p>The zsh shell is currently pretty boring. Install oh-my-zsh and Powerlevel10k
-to give it some zest.</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Follow the guide on their github.</span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Keep in mind that pulling a script from github and passing it to `sh` from</span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># curl is a major security risk. Pull it first, then run it.</span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Reccomended: install fira code nerd font</span>
-</span></span><span style=display:flex><span>sh -c <span style=color:#a5d6ff>&#34;</span><span style=color:#ff7b72>$(</span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style=color:#ff7b72>)</span><span style=color:#a5d6ff>&#34;</span>
-</span></span><span style=display:flex><span>git clone --depth<span style=color:#ff7b72;font-weight:700>=</span><span style=color:#a5d6ff>1</span> https://github.com/romkatv/powerlevel10k.git <span style=color:#a5d6ff>${</span><span style=color:#79c0ff>ZSH_CUSTOM</span><span style=color:#ff7b72>:-</span><span style=color:#79c0ff>$HOME</span>/.oh-my-zsh/custom<span style=color:#a5d6ff>}</span>/themes/powerlevel10k
+to give it some zest.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#75715e># Follow the guide on their github.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Keep in mind that pulling a script from github and passing it to `sh` from</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># curl is a major security risk. Pull it first, then run it.</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Reccomended: install fira code nerd font</span>
+</span></span><span style=display:flex><span>sh -c <span style=color:#e6db74>&#34;</span><span style=color:#66d9ef>$(</span>curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh<span style=color:#66d9ef>)</span><span style=color:#e6db74>&#34;</span>
+</span></span><span style=display:flex><span>git clone --depth<span style=color:#f92672>=</span><span style=color:#ae81ff>1</span> https://github.com/romkatv/powerlevel10k.git <span style=color:#e6db74>${</span>ZSH_CUSTOM<span style=color:#66d9ef>:-</span>$HOME/.oh-my-zsh/custom<span style=color:#e6db74>}</span>/themes/powerlevel10k
 </span></span></code></pre></div><h2 id=microphone>Microphone</h2><p>To enable the microphone, the specific module for Alsa has to be loaded manually.
 This should work out-of-the-box, but it does not. It&rsquo;s an easy tweak though.
 Edit <code>/etc/pulse/default.pa</code> and add the following line <strong>after</strong> the line
-<code>.ifexists module-udev-detect.so</code>:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>load-module module-alsa-source <span style=color:#79c0ff>device</span><span style=color:#ff7b72;font-weight:700>=</span>hw:0,0
-</span></span></code></pre></div><p>Test the mic with <code>pavucontrol</code> (<code>sudo pacman -S pavucontrol</code>) or with this snippet (needs <code>alsa-utils</code>):</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>test-microphone<span style=color:#ff7b72;font-weight:700>()</span> <span style=color:#ff7b72;font-weight:700>{</span>
+<code>.ifexists module-udev-detect.so</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>load-module module-alsa-source device<span style=color:#f92672>=</span>hw:0,0
+</span></span></code></pre></div><p>Test the mic with <code>pavucontrol</code> (<code>sudo pacman -S pavucontrol</code>) or with this snippet (needs <code>alsa-utils</code>):</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>test-microphone<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
 </span></span><span style=display:flex><span>    arecord -vvv -f dat /dev/null
-</span></span><span style=display:flex><span><span style=color:#ff7b72;font-weight:700>}</span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># Used with `test-microphone`. Shows the levels detected by the mic</span>
-</span></span></code></pre></div><p>:: <em><strong>WORK IN PROGRESS</strong></em> ::</p><h1 id=extras>Extras</h1><h2 id=add-some-wallpaper-optional>Add some wallpaper (optional)</h2><p>Install <code>archlinux-wallpaper</code>, then choose a wallpaper by right clicking > Desktop Options:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#8b949e;font-style:italic># They get installed in /usr/share/backgrounds/archlinux</span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># They are a bit old, but they check out.</span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># Used with `test-microphone`. Shows the levels detected by the mic</span>
+</span></span></code></pre></div><p>:: <em><strong>WORK IN PROGRESS</strong></em> ::</p><h1 id=extras>Extras</h1><h2 id=add-some-wallpaper-optional>Add some wallpaper (optional)</h2><p>Install <code>archlinux-wallpaper</code>, then choose a wallpaper by right clicking > Desktop Options:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#75715e># They get installed in /usr/share/backgrounds/archlinux</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># They are a bit old, but they check out.</span>
 </span></span><span style=display:flex><span>sudo pacman -S archlinux-wallpaper
-</span></span></code></pre></div><p>I use <code>wave</code>.</p><h2 id=audio-management>Audio management</h2><p>You probably need these at some point:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>sudo pacman -S alsa-utils pavucontrol
-</span></span></code></pre></div><p>They are used to manage the low-level microphone and playback drivers/devices.</p><h2 id=other-programs>Other programs</h2><p>There are many other programs which are useful to me.</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#8b949e;font-style:italic># The set command here allows for in-line comments, so you can copy-paste</span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic># this command as-is and run it.</span>
+</span></span></code></pre></div><p>I use <code>wave</code>.</p><h2 id=audio-management>Audio management</h2><p>You probably need these at some point:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>sudo pacman -S alsa-utils pavucontrol
+</span></span></code></pre></div><p>They are used to manage the low-level microphone and playback drivers/devices.</p><h2 id=other-programs>Other programs</h2><p>There are many other programs which are useful to me.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span><span style=color:#75715e># The set command here allows for in-line comments, so you can copy-paste</span>
+</span></span><span style=display:flex><span><span style=color:#75715e># this command as-is and run it.</span>
 </span></span><span style=display:flex><span>set -k
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>sudo pacman -Syu <span style=color:#79c0ff>\
-</span></span></span><span style=display:flex><span><span style=color:#79c0ff></span>  via polkit <span style=color:#79c0ff>\ </span><span style=color:#8b949e;font-style:italic># VIA needs to do some setup. Run `pkttyagent &amp;` before the first run. See `polkit` for info. </span>
-</span></span><span style=display:flex><span>  okular <span style=color:#79c0ff>\ </span><span style=color:#8b949e;font-style:italic># PDF and more reader. This pulls is all qt deps, but... whatever.</span>
-</span></span><span style=display:flex><span>  kwantum qt5ct <span style=color:#79c0ff>\ </span><span style=color:#8b949e;font-style:italic># Edit qt apps looks. I use KT-Arc for the theme.</span>
-</span></span><span style=display:flex><span>  engrampa <span style=color:#79c0ff>\ </span><span style=color:#8b949e;font-style:italic># Graphical zip file manager</span>
-</span></span></code></pre></div><p>As a bioinformatician, I also need these:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>set -k
-</span></span><span style=display:flex><span>sudo pacman -S <span style=color:#79c0ff>\
-</span></span></span><span style=display:flex><span><span style=color:#79c0ff></span>  r gcc-fortran <span style=color:#79c0ff>\ </span><span style=color:#8b949e;font-style:italic># gcc-fortran is needed to compile most packages</span>
-</span></span><span style=display:flex><span>  python python-pip python-venv <span style=color:#79c0ff>\
-</span></span></span><span style=display:flex><span><span style=color:#79c0ff></span>  rustup <span style=color:#79c0ff>\ </span><span style=color:#8b949e;font-style:italic># Run the extra steps below</span>
-</span></span><span style=display:flex><span>  docker <span style=color:#79c0ff>\ </span><span style=color:#8b949e;font-style:italic># Run the extra steps below</span>
-</span></span><span style=display:flex><span>  texlive-most <span style=color:#79c0ff>\ </span><span style=color:#8b949e;font-style:italic># For latex, and R too (knitting). You can select just a subset of the whole package.</span>
+</span></span><span style=display:flex><span>sudo pacman -Syu <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  via polkit <span style=color:#ae81ff>\ </span><span style=color:#75715e># VIA needs to do some setup. Run `pkttyagent &amp;` before the first run. See `polkit` for info. </span>
+</span></span><span style=display:flex><span>  okular <span style=color:#ae81ff>\ </span><span style=color:#75715e># PDF and more reader. This pulls is all qt deps, but... whatever.</span>
+</span></span><span style=display:flex><span>  kwantum qt5ct <span style=color:#ae81ff>\ </span><span style=color:#75715e># Edit qt apps looks. I use KT-Arc for the theme.</span>
+</span></span><span style=display:flex><span>  engrampa <span style=color:#ae81ff>\ </span><span style=color:#75715e># Graphical zip file manager</span>
+</span></span></code></pre></div><p>As a bioinformatician, I also need these:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>set -k
+</span></span><span style=display:flex><span>sudo pacman -S <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  r gcc-fortran <span style=color:#ae81ff>\ </span><span style=color:#75715e># gcc-fortran is needed to compile most packages</span>
+</span></span><span style=display:flex><span>  python python-pip python-venv <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  rustup <span style=color:#ae81ff>\ </span><span style=color:#75715e># Run the extra steps below</span>
+</span></span><span style=display:flex><span>  docker <span style=color:#ae81ff>\ </span><span style=color:#75715e># Run the extra steps below</span>
+</span></span><span style=display:flex><span>  texlive-most <span style=color:#ae81ff>\ </span><span style=color:#75715e># For latex, and R too (knitting). You can select just a subset of the whole package.</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>yay -S <span style=color:#79c0ff>\
-</span></span></span><span style=display:flex><span><span style=color:#79c0ff></span>  rstudio-desktop-bin <span style=color:#79c0ff>\ </span><span style=color:#8b949e;font-style:italic># Currently glitched. See the aur page</span>
-</span></span><span style=display:flex><span>  visual-studio-code-bin <span style=color:#79c0ff>\ </span><span style=color:#8b949e;font-style:italic># The proprietary one, to access packages easily. Has telemetry.</span>
+</span></span><span style=display:flex><span>yay -S <span style=color:#ae81ff>\
+</span></span></span><span style=display:flex><span><span style=color:#ae81ff></span>  rstudio-desktop-bin <span style=color:#ae81ff>\ </span><span style=color:#75715e># Currently glitched. See the aur page</span>
+</span></span><span style=display:flex><span>  visual-studio-code-bin <span style=color:#ae81ff>\ </span><span style=color:#75715e># The proprietary one, to access packages easily. Has telemetry.</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic>## Rust finalization</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Rust finalization</span>
 </span></span><span style=display:flex><span>rustup default stable
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#8b949e;font-style:italic>## Docker finalization</span>
+</span></span><span style=display:flex><span><span style=color:#75715e>## Docker finalization</span>
 </span></span><span style=display:flex><span>sudo systemctl enable --now docker.service
-</span></span></code></pre></div><p>Extra packages for some R packages:</p><div class=highlight><pre tabindex=0 style=color:#e6edf3;background-color:#0d1117;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>sudo pacman -S proj
+</span></span></code></pre></div><p>Extra packages for some R packages:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-zsh data-lang=zsh><span style=display:flex><span>sudo pacman -S proj
 </span></span></code></pre></div></section><div class=post-tags></div></article></main><footer><div style=display:flex><a class=soc href=https://github.com/MrHedmad/ rel=me title=GitHub><i data-feather=github></i></a>
-<a class=border></a></div><div class=footer-info>2025 CC-BY 4.0 - Luca Visentin - 2024</div></footer><script>feather.replace()</script></div></body></html>
+<a class=border></a></div><div class=footer-info>2025 CC-BY 4.0 - Luca Visentin - 2025</div></footer><script>feather.replace()</script></div></body></html>
