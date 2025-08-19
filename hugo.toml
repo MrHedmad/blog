@@ -28,6 +28,7 @@ enableRobotsTXT = true
 
 # Multilingual mode config. More for information about how to setup translation,
 # see https://gohugo.io/content-management/multilingual/
+defaultContentLanguage = "en"
 [languages]
   [languages.en]
     title = "Open Bytes"
@@ -36,6 +37,23 @@ enableRobotsTXT = true
     contentDir = "content"
     [languages.en.params]
       madeWith = "Made with [Hugo](https://gohugo.io/) and [Bear Cub](https://github.com/clente/hugo-bearcub)"
+    [languages.en.menus]
+      [[languages.en.menus.main]]
+        name = 'Posts'
+        pageRef = '/posts'
+        weight = 20
+  [languages.it]
+    title = "Open Bytes"
+    languageName = "it-IT 🇮🇹"
+    LanguageCode = "it-IT"
+    contentDir = "content"
+    [languages.it.params]
+      madeWith = "Creato con [Hugo](https://gohugo.io) e [Bear Cub](https://github.com/clente/hugo-bearcub)"
+    [languages.it.menus]
+      [[languages.it.menus.main]]
+        name = 'Post'
+        pageRef = '/posts'
+        weight = 20
 
 [params]
   # The description of your website
@@ -61,7 +79,7 @@ enableRobotsTXT = true
   # If your blog is multilingual but you haven't translated a page, this theme
   # will create a disabled link. By setting `hideUntranslated` to true, you can
   # have the theme simply not show any link
-  hideUntranslated = false
+  hideUntranslated = true
 
   # (EXPERIMENTAL) This theme has two options for its CSS styles: "original" and
   # "herman". The former is what you see on Bear Cub's demo (an optimized
@@ -84,4 +102,3 @@ enableRobotsTXT = true
   [params.author]
     name = "Luca Visentin" # Your name as shown in the RSS feed metadata
     email = "contact@hedmad.eu" # Added to the footer so readers can reply to posts
-
